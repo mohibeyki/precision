@@ -1,0 +1,40 @@
+$ python mnist.py
+Using TensorFlow backend.
+x_train shape: (60000, 28, 28, 1)
+x_test  shape: (10000, 28, 28, 1)
+2017-06-13 02:28:25.948743: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-06-13 02:28:25.949048: I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.7085
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 7.42GiB
+2017-06-13 02:28:25.949059: I tensorflow/core/common_runtime/gpu/gpu_device.cc:927] DMA: 0 
+2017-06-13 02:28:25.949063: I tensorflow/core/common_runtime/gpu/gpu_device.cc:937] 0:   Y 
+2017-06-13 02:28:25.949069: I tensorflow/core/common_runtime/gpu/gpu_device.cc:996] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0)
+Test loss: 0.0304317086999
+Test accuracy: 0.9931
+Reducing precision in weight
+Test loss: 0.030587047456
+Test accuracy: 0.9933
+
+$ python imdb.py
+Using TensorFlow backend.
+Loading data...
+x_train shape: (25000, 100)
+x_test shape: (25000, 100)
+2017-06-13 02:36:10.040824: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-06-13 02:36:10.041135: I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.7085
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 7.54GiB
+2017-06-13 02:36:10.041146: I tensorflow/core/common_runtime/gpu/gpu_device.cc:927] DMA: 0 
+2017-06-13 02:36:10.041149: I tensorflow/core/common_runtime/gpu/gpu_device.cc:937] 0:   Y 
+2017-06-13 02:36:10.041153: I tensorflow/core/common_runtime/gpu/gpu_device.cc:996] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0)
+Test loss: 0.426794177281
+Test accuracy: 0.841600061178
+Reducing precision in weight
+Test loss: 0.426035938181
+Test accuracy: 0.841240061378
