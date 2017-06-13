@@ -10,7 +10,7 @@ from keras.models import Sequential
 def reduce_precision(input_array):
     if type(input_array[0]) == np.float32:
         for i in range(len(input_array)):
-            input_array[i] = np.round(input_array[i], 2)
+            input_array[i] = np.float16(input_array[i])
     else:
         for i in input_array:
             reduce_precision(i)

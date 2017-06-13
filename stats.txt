@@ -1,3 +1,5 @@
+Reducing precision using np.round function to 2 decimal points in mnist and imdb datasets using convolutional and dense/lstm neural networks
+
 $ python mnist.py
 Using TensorFlow backend.
 x_train shape: (60000, 28, 28, 1)
@@ -38,3 +40,53 @@ Test accuracy: 0.841600061178
 Reducing precision in weight
 Test loss: 0.426035938181
 Test accuracy: 0.841240061378
+
+Reducing the precision of the same networks using float32 to float16 converter
+
+$ python mnist.py
+Using TensorFlow backend.
+x_train shape: (60000, 28, 28, 1)
+x_test  shape: (10000, 28, 28, 1)
+Loading weights
+2017-06-13 22:32:14.085553: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-06-13 22:32:14.085886: I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.7085
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 7.41GiB
+2017-06-13 22:32:14.085897: I tensorflow/core/common_runtime/gpu/gpu_device.cc:927] DMA: 0 
+2017-06-13 22:32:14.085901: I tensorflow/core/common_runtime/gpu/gpu_device.cc:937] 0:   Y 
+2017-06-13 22:32:14.085908: I tensorflow/core/common_runtime/gpu/gpu_device.cc:996] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0)
+Test loss: 0.0334605842724
+Test accuracy: 0.9925
+Reducing precision in weight
+Test loss: 0.0334596556662
+Test accuracy: 0.9925
+
+$ python imdb.py
+Using TensorFlow backend.
+Loading data...
+25000 train sequences
+25000 test sequences
+Pad sequences (samples x time)
+x_train shape: (25000, 100)
+x_test shape: (25000, 100)
+Build model...
+Loading weights
+2017-06-13 22:32:41.324465: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-06-13 22:32:41.324766: I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] Found device 0 with properties: 
+name: GeForce GTX 1070
+major: 6 minor: 1 memoryClockRate (GHz) 1.7085
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 7.43GiB
+2017-06-13 22:32:41.324776: I tensorflow/core/common_runtime/gpu/gpu_device.cc:927] DMA: 0 
+2017-06-13 22:32:41.324779: I tensorflow/core/common_runtime/gpu/gpu_device.cc:937] 0:   Y 
+2017-06-13 22:32:41.324783: I tensorflow/core/common_runtime/gpu/gpu_device.cc:996] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:01:00.0)
+Test loss: 0.416491127466
+Test accuracy: 0.842960061097
+Reducing precision in weight
+Test loss: 0.416487687433
+Test accuracy: 0.843000061131
+
