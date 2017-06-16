@@ -97,15 +97,16 @@ model.load_weights('imdb-weights.hdf5')
 # print('Saving weights')
 # model.save_weights('imdb-weights.hdf5', True)
 
+print('Evaluating')
 score, acc = model.evaluate(
     x_test,
     y_test,
     batch_size=batch_size
 )
-print('Test loss:', score)
+print('\nTest loss:', score)
 print('Test accuracy:', acc)
-print('Reducing precision in weight')
 
+print('Reducing precision in weight')
 weights = model.get_weights()
 reduce_precision(weights)
 model.set_weights(weights)
@@ -114,5 +115,5 @@ score, acc = model.evaluate(
     y_test,
     batch_size=batch_size
 )
-print('Test loss:', score)
+print('\nTest loss:', score)
 print('Test accuracy:', acc)

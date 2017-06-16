@@ -73,8 +73,9 @@ model.load_weights('weights.hdf5')
 # print('Saving weights')
 # model.save_weights('weights.hdf5', True)
 
+print('Evaluating')
 score = model.evaluate(x_test, y_test, verbose=0)
-print('Test loss:', score[0])
+print('\nTest loss:', score[0])
 print('Test accuracy:', score[1])
 
 print('Reducing precision in weight')
@@ -83,5 +84,5 @@ reduce_precision(weights)
 model.set_weights(weights)
 
 score = model.evaluate(x_test, y_test, verbose=0)
-print('Test loss:', score[0])
+print('\nTest loss:', score[0])
 print('Test accuracy:', score[1])
